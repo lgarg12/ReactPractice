@@ -3,6 +3,7 @@ import './App.css';
 import Account from './Components/Account';
 import Bonus from './Components/Bonus';
 import Reward from './Components/Reward';
+import Admin from './Components/Admin';
 
 function App() {
   const amount = useSelector(state=>state.account.amount);
@@ -17,6 +18,7 @@ function App() {
       <Account/>
       <Bonus/>
       <Reward/>
+      <Admin/>
     </div>
   );
 }
