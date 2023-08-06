@@ -27,10 +27,11 @@ export const adminApi = createApi({
         }),
         invalidatesTags:['account'],
     }),
-    deleteAccount : builder.mutation({
-        query:(id)=>({
+    UpdateAccount : builder.mutation({
+        query:({amount,id})=>({
             url: `account/${id}`,
-            method:'DELETE',
+            method:'PATCH',
+            body:{amount}
         }),
         invalidatesTags:['account'],
     }),
@@ -39,4 +40,4 @@ export const adminApi = createApi({
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useGetAccountsQuery,useAddAccountMutation ,useDeleteAccountMutation} = adminApi
+export const { useGetAccountsQuery,useAddAccountMutation ,useDeleteAccountMutation ,useUpdateAccountMutation} = adminApi
